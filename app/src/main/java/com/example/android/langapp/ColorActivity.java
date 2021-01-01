@@ -58,6 +58,7 @@ public class ColorActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         audioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
+
         final ArrayList<Word> words = new ArrayList<Word>();
 
 
