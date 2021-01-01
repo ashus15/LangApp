@@ -11,18 +11,18 @@
         android:theme="@style/Theme.LangApp">
         <activity android:name=".PhraseActivity"
             android:label="Phrase"
-            android:parentActivityName=".MainActivity"/>
+           />
 
         <activity android:name=".FamilyActivity"
             android:label="Family"
-            android:parentActivityName=".MainActivity"/>
+           />
         <activity android:name=".ColorActivity"
             android:label="Color"
-            android:parentActivityName=".MainActivity"/>
+           />
 
         <activity android:name=".NumberActivity"
             android:label="Number"
-            android:parentActivityName=".MainActivity"/>
+           />
 
         <activity android:name=".MainActivity">
             <intent-filter>

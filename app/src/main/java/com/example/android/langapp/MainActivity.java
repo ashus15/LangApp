@@ -1,6 +1,7 @@
 package com.example.android.langapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,42 +16,50 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-                TextView num =findViewById(R.id.number_text_view);
-        num.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,NumberActivity.class);
-                startActivity(i);
-            }
-        });
+//                TextView num =findViewById(R.id.number_text_view);
+//        num.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i=new Intent(MainActivity.this,NumberActivity.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        TextView col =findViewById(R.id.color_text_view);
+//        col.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i=new Intent(MainActivity.this,ColorActivity.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        TextView fam =findViewById(R.id.family_text_view);
+//        fam.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i=new Intent(MainActivity.this,FamilyActivity.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        TextView phr =findViewById(R.id.phrase_text_view);
+//        phr.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i=new Intent(MainActivity.this,PhraseActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
-        TextView col =findViewById(R.id.color_text_view);
-        col.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,ColorActivity.class);
-                startActivity(i);
-            }
-        });
+        // Find the view pager that will allow the user to swipe between fragments
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        TextView fam =findViewById(R.id.family_text_view);
-        fam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,FamilyActivity.class);
-                startActivity(i);
-            }
-        });
+        // Create an adapter that knows which fragment should be shown on each page
+        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
 
-        TextView phr =findViewById(R.id.phrase_text_view);
-        phr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,PhraseActivity.class);
-                startActivity(i);
-            }
-        });
-
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
 
     }
 }
